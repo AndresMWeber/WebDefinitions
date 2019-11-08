@@ -1,5 +1,10 @@
 
 # Services
+Useful Resource to Research Stack Technologies: https://stackshare.io
+
+<p align="center">
+    <img src=https://raw.githubusercontent.com/AndresMWeber/WebDefinitions/master/media/6_Services.png>
+</p>
 
 **MongoDB** (DBAAS) - MongoDB is a non-relational database that stores data in collections. It stores data in flexible, JSON-like, meaning fields can vary from document to document and over the time the data structure can change.
 
@@ -75,8 +80,6 @@
   <tr>
     <td colspan="1" rowspan="1">
       <p><span>NoSQL / Non-relational databases</span></p>
-      <p><span></span></p>
-      <p><span></span></p>
     </td>
     <td colspan="1" rowspan="1">
       <p><span>Key-Value Stores: </span><span><a
@@ -104,6 +107,13 @@
             href="https://www.google.com/url?q=https://lucene.apache.org/solr/&amp;sa=D&amp;ust=1572995788438000">Solr</a></span>
       </p>
       <p><span>H</span><span>ybrid Row/Column Store: </span><span><a href="https://www.google.com/url?q=https://ai.google/research/pubs/pub27898&amp;sa=D&amp;ust=1572995788439000">Bigtable</a></span>
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" rowspan="1">
+      <p align="center">
+          <img src=https://raw.githubusercontent.com/AndresMWeber/WebDefinitions/master/media/8_DatabaseTypes.png>
       </p>
     </td>
   </tr>

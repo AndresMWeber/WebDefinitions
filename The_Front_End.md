@@ -13,6 +13,11 @@
   1. **"Host"** represents the root (**@**) or a subdomain (**www**)
   1. **"Value"** is an IP or web address, or other value
 
+<p align="center">
+    <img width="500px" src=https://raw.githubusercontent.com/AndresMWeber/WebDefinitions/master/media/12_DNS.png>
+    <img width="500px" src=https://raw.githubusercontent.com/AndresMWeber/WebDefinitions/master/media/13_DNSTypes.png>
+</p>
+
 ## DNS Types:
 **CNAME** - maps a subdomain to another domain name.  This can be another subdomain on the same site (like forwarding www to the root (**@**)).  Once you define a *CNAME* record for a subdomain (host), you *CAN'T DEFINE* another record for that same subdomain.  Because of this, you can't use *CNAME* at the root level (where you need other records to exist).  **CANNOT USE THIS ON THE ROOT (@)**
 

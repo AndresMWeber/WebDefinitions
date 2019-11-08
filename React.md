@@ -1,4 +1,20 @@
-# REACT
+<h1 align="center">REACT</h1>
+<p align="center">
+    <img width="200px" src=https://raw.githubusercontent.com/AndresMWeber/WebDefinitions/master/media/React.png>
+</p>
+
+# Contents
+[`Libraries`](#libraries)
+
+[`React Properties`](#react-properties)
+
+[`Definitions`](#definitions)
+
+[`Functional vs Class based Components`](#functional-vs-class-based-components)
+
+[`React Routing`](#react-routing)
+
+## Libraries
 
 * **react-dom** - serves as the entry point to the DOM and server renderers for React
 * **react-router** - Core navigation lib
@@ -6,6 +22,8 @@
 * **react-router-native** - Navigation for react-native apps
 * **react-router-redux** - Bindings between redux and react router
 * **react-redux** - redux interface for react components
+  
+[`^ Back to Top`](#contents)
 
 ## React Properties
 
@@ -27,16 +45,10 @@ the state change is passed to the view and to child components
 * **Functional Components** (aka stateless components) - A functional(a.k.a. stateless) component is just a plain javascript function which takes props as an argument and returns a react element.
 
 * **Class Components** (aka stateful components) - Class syntax is one of the most common ways to define a React component. While more verbose than the functional syntax, it offers more control in the form of lifecycle hooks.
+  
+[`^ Back to Top`](#contents)
 
-#### Functional vs Class based Components
-* Class based components
-  * state
-  * lifecycle methods
-  * memoization with React.PureComponent
-* Functional components:
-  * state (useState, useReducer hooks)
-  * lifecycle methods (via the useEffect, useLayoutEffect hooks)
-  * memoization via the memo HOC
+## Definitions
 
 **Uncontrolled vs Controlled Components** -  In a controlled component, form data is handled by a React component. The alternative is uncontrolled components, where form data is handled by the DOM itself. To write an uncontrolled component, instead of writing an event handler for every state update, you can use a ref to get form values from the DOM.
 
@@ -53,8 +65,22 @@ the state change is passed to the view and to child components
   * Usage example: On image load callback to a DOM img tag element to resize/affect grid position/spacing aka affecting React Component DOM elements based on DOM events.
 
     1. ``` React.createRef()``` in constructor
-    1. Add ```ref=(instance property ref was stored in)``` to property of the jsx dom element
+    2. Add ```ref=(instance property ref was stored in)``` to property of the jsx dom element
 
+[`^ Back to Top`](#contents)
+
+## Functional vs Class based Components
+### Class based components
+  * state
+  * lifecycle methods
+  * memoization with React.PureComponent
+  
+### Functional components:
+  * state (useState, useReducer hooks)
+  * lifecycle methods (via the useEffect, useLayoutEffect hooks)
+  * memoization via the memo HOC
+  
+[`^ Back to Top`](#contents)
 
 ## React Routing
 
@@ -63,3 +89,5 @@ Anchor Tag Usage - Never use this while using react-router because this dumps al
 * **BrowserRouter** - Uses everything after **TLD** (**.com, .net**) as the path. (*page.com/pagetwo*)
 * **HashRouter** - Uses everything after # as the **URL** path. (*page.com/#/pagetwo*)
 * **MemoryRouter** - Does not use the **URL** to track navigation. (*page.com*)
+  
+[`^ Back to Top`](#contents)

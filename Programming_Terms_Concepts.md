@@ -8,7 +8,7 @@
 
 [`Prototypal Inheritance vs Classical Inheritance`](#prototypal-inheritance-vs-classical-inheritance)
 
-[`Common Programming Paradigms`](#common-design-patterns)
+[`Common Programming Paradigms`](#common-programming-paradigms)
 
 [`Design Pattern Classifications`](#design-pattern-classifications)
 
@@ -67,6 +67,10 @@
 [`^ Back to Top`](#contents)
 
 ## Prototypal Inheritance vs Classical Inheritance
+<p align="center">
+    <img src=https://raw.githubusercontent.com/AndresMWeber/WebDefinitions/master/media/7_Inheritance.png>
+</p>
+
 **Framework** - A universal, reusable software environment to facilitate the development of software applications, products and solutions.
 
 * It describes the structure of the application.

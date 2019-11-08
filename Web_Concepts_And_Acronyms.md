@@ -25,13 +25,19 @@
   
 **RESTful** - A RESTful API -- also referred to as a RESTful web service -- is based on representational state transfer (**REST**) technology, an architectural style and approach to communications often used in web services development.
 
-<hr style="page-break-before:always;display:none;">
+<p align="center">
+    <img src=https://raw.githubusercontent.com/AndresMWeber/WebDefinitions/master/media/2_ServiceTypes.png>
+</p>
 
 **PAAS** (**P**latform **A**s **A** **S**ervice) - Is a cloud computing model in which a third-party provider delivers hardware and software tools -- usually those needed for application development -- to users over the internet. 
   
 **IAAS** (**I**nfrastructure **A**s **A** **S**ervice) - Is a form of cloud computing that provides virtualized computing resources over the internet.
 
 **SAAS** (**S**ubscription **A**s **A** **S**ervice) - A method of software delivery and licensing in which software is accessed online via a subscription, rather than bought and installed on individual computers.
+
+<p align="center">
+    <img src=https://raw.githubusercontent.com/AndresMWeber/WebDefinitions/master/media/3_ServiceTypes.png>
+</p>
 
 **BDAAS** (**B**ig **D**ata **A**s **A** **S**ervice) - Is the delivery of statistical analysis tools or information by an outside provider that helps organizations understand and use the insights gained from large information sets in order to gain a competitive advantage.
 
@@ -67,4 +73,12 @@
 
 **Normalizing CSS** - Normalizing preserves useful default styles rather than “unstyling” everything. It also corrects bugs for common browser dependencies.
 
+<p align="center">
+    <img src=https://raw.githubusercontent.com/AndresMWeber/WebDefinitions/master/media/4_Prefetching.png>
+</p>
+
 **CORS** (**C**ross-**O**rigin **R**esource **S**haring) - is a mechanism that uses additional HTTP headers to tell browsers to give a web application running at one origin, access to selected resources from different origins.
+
+<p align="center">
+    <img src=https://raw.githubusercontent.com/AndresMWeber/WebDefinitions/master/media/5_CORS.png>
+</p>
