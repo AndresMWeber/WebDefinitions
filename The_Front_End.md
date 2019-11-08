@@ -14,8 +14,8 @@
   1. **"Value"** is an IP or web address, or other value
 
 <p align="center">
-    <img width="450px" src=https://raw.githubusercontent.com/AndresMWeber/WebDefinitions/master/media/12_DNS.png>
-    <img width="450px" src=https://raw.githubusercontent.com/AndresMWeber/WebDefinitions/master/media/13_DNSTypes.png>
+    <img width="425px" src=https://raw.githubusercontent.com/AndresMWeber/WebDefinitions/master/media/12_DNS.png>
+    <img width="425px" src=https://raw.githubusercontent.com/AndresMWeber/WebDefinitions/master/media/13_DNSTypes.png>
 </p>
 
 ## DNS Types:
