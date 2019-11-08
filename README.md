@@ -10,7 +10,7 @@ A compendium of the web definitions and programming concepts I've come across in
     <h3><i><a href=https://medium.com/free-code-camp/the-complete-javascript-handbook-f26b2c71719c>JavaScript</a> is not asynchronous language, but a synchronous one with some asynchronous behaviors. JavaScript, at its core, is a <a href=https://johnresig.com/blog/how-javascript-timers-work/>single-threaded and synchronous language.</a></i></h3>
   </td>
   <td>
-    <img src=https://andresmweber.github.io/WebDefinitions/media/1_EventLoop.png>
+    <img src=https://raw.githubusercontent.com/AndresMWeber/WebDefinitions/master/media/1_EventLoop.png>
   </td>
   <tr>
 </tbody>
