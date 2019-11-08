@@ -1,6 +1,21 @@
 
 # Programming Terms/Concepts
 
+# Contents
+[`Contents`](#contents)
+
+[`Definitions`](#definitions)
+
+[`Prototypal Inheritance vs Classical Inheritance`](#prototypal-inheritance-vs-classical-inheritance)
+
+[`Common Programming Paradigms`](#common-design-patterns)
+
+[`Design Pattern Classifications`](#design-pattern-classifications)
+
+[`Common Design Patterns`](#common-design-patterns)
+
+## Definitions
+
 **Primitive** - A primitive (primitive value, primitive data type) is data that is not an object and has no methods. In JavaScript, there are 6 primitive data types: string, number, boolean, null, undefined, symbol (new in ECMAScript 2015).
 
 **Function Expression** - Storing an anonymous function in a variable.
@@ -49,6 +64,8 @@
 
 **Object Linked to Other Object (OLOO) Pattern** - In this pattern, we don’t use a function to create objects at all. Instead, we define a blueprint object of sorts, which we then explicitly use as the prototype for any individual objects we need. In JavaScript this is implemented like so: ```Object.create(myObj)```  OLOO allows us to share like behaviors and check the type of individual objects, all while sidestepping the class illusions inherent in the constructor and pseudo-classical patterns.
 
+[`^ Back to Top`](#contents)
+
 ## Prototypal Inheritance vs Classical Inheritance
 **Framework** - A universal, reusable software environment to facilitate the development of software applications, products and solutions.
 
@@ -74,6 +91,7 @@ Models will read and write data directly to a database.
 
 **Programming Paradigm** - A programming paradigm is a fundamental style of building the structure and elements of a program. The styles and capabilities of programming languages are defined by their paradigms.
 
+[`^ Back to Top`](#contents)
 
 ## Common Programming Paradigms
 * **Imperative**: Programming with an explicit sequence of commands that update state.
@@ -95,6 +113,8 @@ Models will read and write data directly to a database.
 
 **Design Pattern** - a design pattern is a tried and tested solution to a common programming pattern. It could be considered a best practice. If you approach a program using an Object Oriented paradigm, there are a number of design patterns you can then draw on to solve specific problems.
 
+[`^ Back to Top`](#contents)
+
 # Design Pattern Classifications
 
 **Creational Design Patterns** - These design patterns are all about class instantiation. This pattern can be further divided into class-creation patterns and object-creational patterns. While class-creation patterns use inheritance effectively in the instantiation process, object-creation patterns use delegation effectively to get the job done.
@@ -103,6 +123,7 @@ Models will read and write data directly to a database.
 
 **Behavioral Design Patterns** - These design patterns are all about Class's objects communication. Behavioral patterns are those patterns that are most specifically concerned with communication between objects.
 
+[`^ Back to Top`](#contents)
 
 # Common Design Patterns
 **Singleton** - Only one instance of the given class may exist at any time.
@@ -118,3 +139,5 @@ Models will read and write data directly to a database.
 **Template** - create a “template” for high order operations/order usually as an abstract class and then the class that extends that will fill in the details with helper functions or implementing those sub-functions of the high order operation.
 
 **State** - Allows behavior of the class to change based on the current state of the object.
+
+[`^ Back to Top`](#contents)
