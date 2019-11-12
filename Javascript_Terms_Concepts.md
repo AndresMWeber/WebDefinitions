@@ -75,7 +75,7 @@
 
 **Polyfill** - In web development, a polyfill is code that implements a feature on web browsers that do not support the feature. Most often, it refers to a JavaScript library that implements an HTML5 web standard, either an established standard (supported by some browsers) on older browsers, or a proposed standard (not supported by any browsers) on existing browsers. Formally, "a polyfill is a shim for a browser API"
 
-**Isomorphic/Universal JavaScript** - Made popular by Spike Brehm of AirBnB, means rendering pages on both the server and client side. It usually implies the use of JavaScript and Node.js/Io.js because they allow for the re-use of libraries, allowing browser JavaScript code to be run in the Node.js/Io.js environment with very little modification. As a result of this interchangeability, the Node.js and JavaScript ecosystem supports a wide variety of isomorphic frameworks such as React.js, lazo.js, and Rendr amongst others.
+**[Isomorphic](https://medium.com/capital-one-tech/why-everyone-is-talking-about-isomorphic-universal-javascript-and-why-it-matters-38c07c87905)/Universal JavaScript** - Made popular by Spike Brehm of AirBnB, means rendering pages on both the server and client side. It usually implies the use of JavaScript and Node.js/Io.js because they allow for the re-use of libraries, allowing browser JavaScript code to be run in the Node.js/Io.js environment with very little modification. As a result of this interchangeability, the Node.js and JavaScript ecosystem supports a wide variety of isomorphic frameworks such as React.js, lazo.js, and Rendr amongst others.
 
 <p align="center">
     <img src=https://raw.githubusercontent.com/AndresMWeber/WebDefinitions/master/media/14_isomorphic.png>
