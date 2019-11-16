@@ -269,7 +269,15 @@
       <p><span>MERN consists of different open-source components: MongoDB, Express, React, and Node.js. All the components provide the end-to-end framework support for developers to work in.</span></p>
     </td>
   </tr>
-</tbody>
+  <tr>
+    <td colspan="1" rowspan="1">
+      <p><span><a href="https://jamstack.org/">JAM</a></span></p>
+    </td>
+    <td colspan="1" rowspan="1">
+      <p><span>Dynamic apps with JavaScript, APIs, and prerendered Markup, served without web servers.</span></p>
+    </td>
+  </tr>
+  </tbody>
 </table>
 
 [`^ Back to Top`](#contents)
