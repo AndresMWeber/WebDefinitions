@@ -71,6 +71,12 @@
     <img src=https://raw.githubusercontent.com/AndresMWeber/WebDefinitions/master/media/7_Inheritance.png>
 </p>
 
+**Code Splitting** - technique of splitting your code into various bundles which can then be loaded on demand or in parallel
+
+**Lazy-Loading** - loading on demand or in parallel.
+
+**Eager-Loading** - everything is loaded no matter if you use it or not.
+
 **Framework** - A universal, reusable software environment to facilitate the development of software applications, products and solutions.
 
 * It describes the structure of the application.
