@@ -22,6 +22,8 @@
 
 [`Types of Web Development Stacks`](#types-of-web-development-stacks)
 
+[`Javascript Supersets`](#javascript-supersets)
+
 <hr style="page-break-before:always;display:none;">
 
 ## ECMAScript
@@ -279,5 +281,15 @@
   </tr>
   </tbody>
 </table>
+
+[`^ Back to Top`](#contents)
+
+## Javascript Supersets
+
+**TypeScript** - TypeScript is an open-source programming language developed and maintained by Microsoft. It is a strict syntactical superset of JavaScript, and adds optional static typing to the language.
+
+**CoffeeScript** - CoffeeScript is a programming language that compiles to JavaScript. It adds syntactic sugar inspired by Ruby, Python and Haskell in an effort to enhance JavaScript's brevity and readability. Specific additional features include list comprehension and destructuring assignment.
+
+
 
 [`^ Back to Top`](#contents)
