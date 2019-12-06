@@ -78,7 +78,7 @@ E.g: ```export class MyComponent implements OnInit, OnChanges```
 ## Directives
 Directives are a class like a component but without a view or template that modify their host elements based on new abilities provided by the directives.
 * ```*ngIf="conditionalExpression" (#elseCondition)``` - Structural Directive that allows conditional DOM manipulation.
-* ```*ngFor=let element of iterable; let i = index``` - Structural Directive that allows iterable DOM manipulation.
+* ```*ngFor=let element of iterable; let i = index``` - Structural Directive that allows iterable DOM manipulation.  Within the rest of that html tag you can refer to the element name as a variable.
 * ```[ngStyle]=``` - Attribute Directive dynamically modifies the appearance/styling of an element.
 * ```[ngClass]={className: boolean expression}``` - Attribute Directive dynamically modifies the class of an element.
 * ```<angularSelector *ngFor="let arrayObject of angularClassInstancePropertyArray>``` - 
