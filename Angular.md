@@ -67,7 +67,7 @@ E.g: ```export class MyComponent implements OnInit, OnChanges```
 
 * **Property Binding** - ```[htmlProperty ]="angularClassProperty"``` - Derives the value of the angular class instance property that you set the html element's property equal to.
 
-* **Event Binding** - ```(eventName)="angularClassMethod()"``` - Allows to bind a DOM element's event to the Angular class instance method.
+* **Event Binding** - ```(eventName)="angularClassMethod()"``` - Allows to bind a DOM element's event to the Angular class instance method.  Can optionally pass ```$event``` as a parameter to gain access to the event data.
 
 * **Two-Way Databinding** - ```([ngModel])="angularClassPropertyToBind``` - Allows two way bound class properties that can be set from the html element or from the angular class instance property.
 
