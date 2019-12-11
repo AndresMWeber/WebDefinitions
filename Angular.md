@@ -76,12 +76,36 @@ E.g: ```export class MyComponent implements OnInit, OnChanges```
 [`^ Back to Top`](#contents)
 
 ## Directives
+
 Directives are a class like a component but without a view or template that modify their host elements based on new abilities provided by the directives.
+Two Types of Directives:
+1. ```Attribute``` - (HTMLElement) Only affects/changes the element they are added to
+2. ```Structural``` - (*HTMLElement) Affects the whole area in the DOM (elements are added/removed). (Can only have one per element)
+
 * ```*ngIf="conditionalExpression" (#elseCondition)``` - Structural Directive that allows conditional DOM manipulation.
 * ```*ngFor=let element of iterable; let i = index``` - Structural Directive that allows iterable DOM manipulation.  Within the rest of that html tag you can refer to the element name as a variable.
 * ```[ngStyle]=``` - Attribute Directive dynamically modifies the appearance/styling of an element.
 * ```[ngClass]={className: boolean expression}``` - Attribute Directive dynamically modifies the class of an element.
 * ```<angularSelector *ngFor="let arrayObject of angularClassInstancePropertyArray>``` - 
+
+Custom Directive that colors background color green :
+```javascript
+import { Directive, ElementRef, OnInit } from '@angular/core';
+
+@Directive({
+    selector: '[customSelectorName]`
+})
+export class CustomDirectiveClass {
+    constructor(private elementRef: ElementRef){
+    }
+    
+    ngOnInit() {
+        this.elementRef.nativeElement.style.backgroundColor = 'green';
+    }
+}
+
+// NOTE: Must add Custom Directive class to App module declarations.
+```
 
 [`^ Back to Top`](#contents)
 
