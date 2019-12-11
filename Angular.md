@@ -30,7 +30,8 @@
 [`Pipes`](#pipes)
 
 ## Components
-Angular uses a **decorator** in order to wrap whatever class you create as a component.  This contrasts with **React's** ```extend``` style class definition.  You pass an ```object``` that has an optional ```selector``` and a ```templateUrl``` or ```template``` field that specifies the html file that contains its skeleton.  
+Angular uses a **
+** in order to wrap whatever class you create as a component.  This contrasts with **React's** ```extend``` style class definition.  You pass an ```object``` that has an optional ```selector``` and a ```templateUrl``` or ```template``` field that specifies the html file that contains its skeleton.  
 
 Angular also has a CLI tool that allows you to generate the scaffolding for any given component using ```ng generate component``` among many other features.
 
@@ -84,6 +85,7 @@ Two Types of Directives:
 
 * ```*ngIf="conditionalExpression" (#elseCondition)``` - Structural Directive that allows conditional DOM manipulation.
 * ```*ngFor=let element of iterable; let i = index``` - Structural Directive that allows iterable DOM manipulation.  Within the rest of that html tag you can refer to the element name as a variable.
+* ```[ngSwitch]="value"'``` ```<subElement *ngSwitchCase="5">``` - Based on "value" property of the Angular Component you can conditionally show specific sub HTML elements.
 * ```[ngStyle]=``` - Attribute Directive dynamically modifies the appearance/styling of an element.
 * ```[ngClass]={className: boolean expression}``` - Attribute Directive dynamically modifies the class of an element.
 * ```<angularSelector *ngFor="let arrayObject of angularClassInstancePropertyArray>``` - 
@@ -103,10 +105,55 @@ export class CustomDirectiveClass {
         this.elementRef.nativeElement.style.backgroundColor = 'green';
     }
 }
-
 // NOTE: Must add Custom Directive class to App module declarations.
 ```
 
+Custom Directive that colors background color green using Renderer2:
+```javascript
+import { Directive, ElementRef, OnInit, Renderer2 } from '@angular/core';
+
+@Directive({
+    selector: '[customSelectorName]`
+})
+export class CustomDirectiveClass {
+    constructor(private elementRef: ElementRef, private renderer: Renderer2){
+    }
+    
+    ngOnInit() {
+        this.renderer.setStyle(this.elementRef.nativeElement, 'background-color', 'green');
+    }
+}
+// NOTE: Must add Custom Directive class to App module declarations.
+```
+
+Custom Directive that colors background color blue on mouse over permanently using HostListener
+Also binds a backgroundColor property from elementRef.nativeElement.style.backgroundColor. 
+If you want to have input must supply Input with the same selector name and now refer to the Custom Directive as ```[customDirective]="overrideValue"```
+
+```javascript
+import { Directive, ElementRef, OnInit, Input, HostBinding } from '@angular/core';
+
+@Directive({
+    selector: '[customSelectorName]`
+})
+export class CustomDirectiveClass {
+    @Input() defaultColor: string = 'transparent';
+    @Input('customSelectorName') highlightColor: string = 'blue';
+    @HostBinding('style.backgroundColor') backgroundColor: string = this.highlightColor;
+    
+    constructor(private elementRef: ElementRef, private renderer: RendererV2){
+    }
+    
+    ngOnInit() {
+        this.backgroundColor = this.defaultColor
+    }
+    
+    @HostListener('mouseenter') mouseover(eventData: Event){
+        this.backgroundColor = this.highlightColor;
+    }
+}
+// NOTE: Must add Custom Directive class to App module declarations.
+```
 [`^ Back to Top`](#contents)
 
 ## Templates
