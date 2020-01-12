@@ -66,13 +66,38 @@ E.g: ```export class MyComponent implements OnInit, OnChanges```
 ## Databinding
 * **String Manipulation** - ```{{propertyName}}```
 
-* **Property Binding** - ```[htmlProperty ]="angularClassProperty"``` - Derives the value of the angular class instance property that you set the html element's property equal to.
+* **Property Binding** - ```[htmlProperty ]="angularClassProperty"``` - Directly binds the value of the angular class instance property to the specified html element's property as depicted in between the brackets.
 
 * **Event Binding** - ```(eventName)="angularClassMethod()"``` - Allows to bind a DOM element's event to the Angular class instance method.  Can optionally pass ```$event``` as a parameter to gain access to the event data.
 
-* **Two-Way Databinding** - ```([ngModel])="angularClassPropertyToBind``` - Allows two way bound class properties that can be set from the html element or from the angular class instance property.
+* **Two-Way Databinding** - ```([ngModel])="angularClassPropertyToBind``` - Allows two way bound class properties that can be set from the html element or from the angular class instance property. ()+[] combines both both property and event binding.  But you need to add the FormsModule to add the two way databinding directives.
 
-* **Custom Property Binding** - (in Angular view component class definition) ```@Input('customPropertyAlias') property``` - Now you can bind to this property anywhere in the angular html view files.  To add an alias to these properties, just pass a string in the Input decorator as a string (not recommended unless necessary).
+* **Custom Property Binding (Input)** - (in Angular view component class definition) ```@Input('customPropertyAlias') property``` - Now you can bind to this property anywhere in the angular html view files.  To add an alias to these properties, just pass a string in the Input decorator as a string (not recommended unless necessary).
+
+* **Custom Property Binding (Output)** - (in Angular view component class definition) ```@Output() property = new EventEmitter``` - This enables triggering the property as an event emitter and passing data to the parent component as output.
+
+``` javascript
+import { Component, Input, EventEmitter, Output } from '@angular/core';
+@Component({
+    template: '<article class="product" (click)="onClicked()"><div {{ productName }}</div></article>',
+    selector: 'app-product',
+})
+export class ProductComponent {
+    @Output() productClicked = new EventEmitter();
+    @Input() productName: string;
+    onClicked () {
+        this.productClicked.emit()
+    }
+```
+``` html
+<!-- Enclosing component's html template using the previously defined Angular Component above -->
+<app-product 
+             *ngFor="let product of products" 
+             (productClicked)="onRemoveProduct(product)" <!-- This will allow the parent component to listen to the event and trigger a response-->
+             [productName]="product"
+</app-product>
+```
+
 
 [`^ Back to Top`](#contents)
 
@@ -84,7 +109,7 @@ Two Types of Directives:
 2. ```Structural``` - (*HTMLElement) Affects the whole area in the DOM (elements are added/removed). (Can only have one per element)
 
 * ```*ngIf="conditionalExpression" (#elseCondition)``` - Structural Directive that allows conditional DOM manipulation.
-* ```*ngFor=let element of iterable; let i = index``` - Structural Directive that allows iterable DOM manipulation.  Within the rest of that html tag you can refer to the element name as a variable.
+* ```*ngFor=let element of iterable; let i = index``` - Structural Directive that allows iterable DOM manipulation.  Within the rest of that html tag you can refer to the ```element``` name as a variable.
 * ```[ngSwitch]="value"'``` ```<subElement *ngSwitchCase="5">``` - Based on "value" property of the Angular Component you can conditionally show specific sub HTML elements.
 * ```[ngStyle]=``` - Attribute Directive dynamically modifies the appearance/styling of an element.
 * ```[ngClass]={className: boolean expression}``` - Attribute Directive dynamically modifies the class of an element.
@@ -137,7 +162,7 @@ import { Directive, ElementRef, OnInit, Input, HostBinding } from '@angular/core
     selector: '[customSelectorName]`
 })
 export class CustomDirectiveClass {
-    @Input() defaultColor: string = 'transparent';
+    () defaultColor: string = 'transparent';
     @Input('customSelectorName') highlightColor: string = 'blue';
     @HostBinding('style.backgroundColor') backgroundColor: string = this.highlightColor;
     
@@ -153,6 +178,42 @@ export class CustomDirectiveClass {
     }
 }
 // NOTE: Must add Custom Directive class to App module declarations.
+```
+[`^ Back to Top`](#contents)
+
+## Forms
+1.  Should not have an action, but instead uses the (ngSubmit) event handler provided by Angular.  
+2.  You do not need two way binding and instead can just add ngModel to any input fields to automatically add two way binding after defining the name on the html tag.  
+3.  You have to add the javascript form object by adding a local reference with the # syntax which will give us access to the implicitly created form object that was created behind the scenes.
+
+```html
+<!-- products.component.html -->
+<h1>My Products</h1>
+<form (ngSubmit)="onAddProduct()" #f="ngForm"> <!-- Gives us access to the forms object angular created -->
+    <input type="text" ngModel name="productName" required>
+    <button type="submit">Add Product</button>
+</form>
+<app-product (productClicked)="onRemoveProduct(product)" 
+```
+```javascript
+// products.component.ts
+import { Component, Input, EventEmitter, Output } from '@angular/core';
+@Component({
+    template: '<article class="product" (click)="onClicked()"><div {{ productName }}</div></article>',
+    selector: 'app-products',
+})
+export class ProductComponent {
+    @Output() productClicked = new EventEmitter();
+    @Input() productName: string;
+    onAddProduct(form){
+        console.log(form) // this will print out the DOM form object.
+        if (form.valid) {
+            this.products.push(form.value.productName) // productName is available as a control because we added ngModel + name="productName" in the html file.
+        }
+    }
+    onRemoveProduct(productName: string) {
+        this.products = this.products.filter(p => p !== productName)
+    }
 ```
 [`^ Back to Top`](#contents)
 
@@ -175,10 +236,6 @@ export class CustomDirectiveClass {
 [`^ Back to Top`](#contents)
 
 ## Observables
-
-[`^ Back to Top`](#contents)
-
-## Forms
 
 [`^ Back to Top`](#contents)
 
