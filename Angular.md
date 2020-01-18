@@ -224,6 +224,47 @@ export class ProductComponent {
 [`^ Back to Top`](#contents)
 
 ## Services
+A service class is a class meant to be instantiated and passed as an argument to be an interface for retrieving external data for a component.  After defining a service class you need to add it to the app.module.ts providers array in order to have it injectable to your App's components.  That way just by defining it as an type casted parameter in the constructor it will automatically provide an automagically bound instance property variable of that class to the component.
+
+Use the ```.next()``` method in order to signal the subscribed objects of changes.
+
+```TypeScript
+import { Subject } from 'rxjs';
+
+export class ProductsService {
+    private products = ['A Book'];
+    productsUpdated = new Subject(); 
+    
+    addProduct(productName: string) {
+        this.products.push(productName);
+        this.productsUpdated.next();
+    }
+    
+    getProducts() {
+        return [...this.products];
+    }
+}
+```
+
+#### Service Subscriptions
+By definiting a Subject instance you add an event emitter that can subscribed to for subsequent changes.
+In the encapsulating class that uses the Service as a bound property instance just call
+(It is also good practice to store that subscription in an instance variable for cleanup purposes and preventing memory leaks.)
+
+```TypeScript
+import { Subscription } from 'rxjs';
+
+// within the class body:
+    private productsSubscription: Subscription
+    
+    // within subscription function (probably ngOnInit)
+        this.productsSubscription = this.productsService.productsUpdated.subscribe(() => {
+            this.products = this.productsService.getProducts();
+        });
+    
+    // within ngOnDestroy:
+        this.productsSubscription.unsubscribe()
+```
 
 [`^ Back to Top`](#contents)
 
@@ -232,7 +273,45 @@ export class ProductComponent {
 [`^ Back to Top`](#contents)
 
 ## Routing
+```TypeScript
+// home.component.ts
+import { Component } from '@angular/core'
 
+@Component({
+    template: '<h1>The Home Component</h1>'
+})
+export class HomeComponent {}
+```
+
+```TypeScript
+// app-routing.module.ts
+import { NgModule } from '@angular/core'
+import { Routes, RouterModule } from '@angular/router'
+import { HomeComponent } from './home.component'
+import { ProductsComponent } from './products.component'
+
+const routes: Routes = [
+    { path: '', component: HomeComponent},
+    { path: 'products', component: ProductsComponent},
+];
+
+@NgModule({
+    imports: [
+        RouterModule.forRoot(routes)
+    ],
+    exports: [RouterModule]
+})
+export class AppRoutingModule {}
+```
+
+Then import the AppRoutingModule in app.module.ts in the imports section of the NgModule decorator.
+Now you can feel free to use the router using html and the ```routerLink directive```:
+```html
+<h1>My App</h1>
+<a routerLink="/">Home</a>
+<a routerLink="/products">Products</a>
+<router-outlet></router-outlet>
+```
 [`^ Back to Top`](#contents)
 
 ## Observables
