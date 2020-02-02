@@ -29,6 +29,8 @@
 
 [`Pipes`](#pipes)
 
+[`Material`](#material)
+
 ## Components
 Angular uses a **
 ** in order to wrap whatever class you create as a component.  This contrasts with **React's** ```extend``` style class definition.  You pass an ```object``` that has an optional ```selector``` and a ```templateUrl``` or ```template``` field that specifies the html file that contains its skeleton.  
@@ -319,5 +321,23 @@ Now you can feel free to use the router using html and the ```routerLink directi
 [`^ Back to Top`](#contents)
 
 ## Pipes
+
+[`^ Back to Top`](#contents)
+
+## Material
+
+### `MatDialog` 
+
+Store an instance of MatDialog in the constructor of the class you want to pop up a dialog from.  Then when you're ready run the method `open(<YourDialogContentsComponent>, {data: {anyPassed: data}}`. The second argument is optional but allows you to pass any data to the dialog's contents component as long as your signature looks like this:
+
+``` javascript
+import { Inject } from '@angular/core';
+import { MAT_DIALOG_DATA } from '@angular/material';
+
+//...
+    constructor(@Inject(MAT_DIALOG_DATA) public passedDataVarName: any)
+```
+
+Make sure you store the method's return value in a dialogRef variable so you can subscribe to the close event: `dialogRef.afterClosed().subscribe(<yourCallback(result)>)`
 
 [`^ Back to Top`](#contents)
