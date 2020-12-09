@@ -29,11 +29,13 @@
     <img src=https://raw.githubusercontent.com/AndresMWeber/WebDefinitions/master/media/2_ServiceTypes.png>
 </p>
 
-**PAAS** (**P**latform **A**s **A** **S**ervice) - Is a cloud computing model in which a third-party provider delivers hardware and software tools -- usually those needed for application development -- to users over the internet. 
+**PAAS** (**P**latform **A**s **A** **S**ervice) - A cloud service model in which a third-party provider delivers hardware and software tools -- usually those needed for application development -- to users over the internet. 
   
-**IAAS** (**I**nfrastructure **A**s **A** **S**ervice) - Is a form of cloud computing that provides virtualized computing resources over the internet.
+**IAAS** (**I**nfrastructure **A**s **A** **S**ervice) - A cloud service model that provides virtualized computing resources over the internet.
 
 **SAAS** (**S**ubscription **A**s **A** **S**ervice) - A method of software delivery and licensing in which software is accessed online via a subscription, rather than bought and installed on individual computers.
+
+**BAAS** (**B**ackend **A**s **A** **S**ervice) - A cloud service model in which developers outsource all the behind-the-scenes aspects of a web or mobile application so that they only have to write and maintain the frontend. BaaS vendors provide pre-written software for activities that take place on servers, such as user authentication, database management, remote updating, and push notifications (for mobile apps), as well as cloud storage and hosting.
 
 <p align="center">
     <img src=https://raw.githubusercontent.com/AndresMWeber/WebDefinitions/master/media/3_ServiceTypes.png>
