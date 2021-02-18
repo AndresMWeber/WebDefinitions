@@ -10,7 +10,11 @@
 ![image](https://user-images.githubusercontent.com/1587270/104630552-e2683600-5668-11eb-9d15-4f6affd3d330.png)
 
 
-**SSG** - **S**tatic **S**ite **G**eneration - Instead of on demand rendering, the server renders your static html at build time maximizing efficiency and load times and does not use any resources generating the content like SSR, however these pages are static.
+**SSG** - **S**tatic **S**ite **G**eneration - Instead of on demand rendering, the server renders your static html at build time maximizing efficiency and load times and does not use any resources generating the content like SSR, however these pages are static.  It builds all files when 1 changes but builds all necessary files at once (can be based off of a database making it more applicable to things like a blog, not very dynamic content.)
+
+
+**ISG** - **I**ncremental **S**tatic **G**eneration - On 1st page visit it is generated on demand and then that static file is served for all following visitors.
+
 
 **PR** - **P**re **R**endering - A hybrid approach of SSR and SSG where you pre-render static html files which approximate a load screen while the SSR page is rendered.
 ![image](https://user-images.githubusercontent.com/1587270/104660924-81a32280-5695-11eb-8145-f293763c6d8c.png)
